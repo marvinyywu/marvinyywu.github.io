@@ -118,7 +118,7 @@ export function Projects() {
             <li>Implemented local language support, auto-fill search bars, and path finding functionality using the GTK toolkit.</li>
             <li>Containerized the application with Docker and deployed it to Kubernetes.</li>
             <li>Developed design and communication skills by coordinating and distributing work among teammates with Git.</li>
-            <li>Tackled the traveling salesman problem using Dijkstra's algorithm, 2-opt, and parallel multi threading, earning the 5th best solution out of 91 teams.</li>
+            <li>Tackled the traveling salesman problem using Dijkstra&apos;s algorithm, 2-opt, and parallel multi threading, earning the 5th best solution out of 91 teams.</li>
           </ul>
         </CardContent>
         <CardFooter>
