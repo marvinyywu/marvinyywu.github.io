@@ -24,7 +24,7 @@ export function Experience() {
               className="absolute right-0 top-0 -translate-y-2"
             />
         </CardTitle>
-        <CardDescription id="card-description">Professional Engineering Student</CardDescription>
+        <CardDescription id="card-description">PEY Intern</CardDescription>
         </CardHeader>
         <CardContent>
         <ul className="list-description">
