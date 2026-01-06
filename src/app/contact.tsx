@@ -35,7 +35,7 @@ export function Contact() {
         </Link>
       </Item>
       <Item variant="outline" asChild>
-        <Link href="https://github.com/TheRandomGuy146275" target="_blank">
+        <Link href="https://github.com/marvinyywu" target="_blank">
           <ItemMedia>
             <FaGithub className="size-5" />
           </ItemMedia>
