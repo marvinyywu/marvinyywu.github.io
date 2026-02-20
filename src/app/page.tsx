@@ -13,7 +13,7 @@ export default function Home() {
       <Navigation />
       <div className="min-h-screen flex items-center justify-center transition-all duration-300">
         <span className="text-center space-y-10">
-          <h3>This is my website</h3>
+          <h3>My Website</h3>
           <Contact />
         </span>
       </div>

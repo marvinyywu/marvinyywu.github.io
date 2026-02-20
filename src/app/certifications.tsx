@@ -24,7 +24,7 @@ export function Certifications() {
         </CardContent>
         <CardFooter>
           <span className="flex overflow-auto gap-4">
-            <p>Aug 2023</p>
+            <p>August 2023</p>
             <Badge variant="outline">Python</Badge>
             <Badge variant="outline">HTML</Badge>
             <Badge variant="outline">CSS</Badge>
@@ -55,7 +55,7 @@ export function Certifications() {
         </CardContent>
         <CardFooter>
           <span className="flex overflow-auto gap-4">
-            <p>Aug 2022</p>
+            <p>August 2022</p>
             <Badge variant="outline">C++</Badge>
           </span>
         </CardFooter>
@@ -72,7 +72,7 @@ export function Certifications() {
         </CardContent>
         <CardFooter>
           <span className="flex overflow-auto gap-4">
-            <p>Jun 2022</p>
+            <p>June 2022</p>
             <Badge variant="outline">C</Badge>
           </span>
         </CardFooter>
@@ -89,7 +89,7 @@ export function Certifications() {
         </CardContent>
         <CardFooter>
           <span className="flex overflow-auto gap-4">
-            <p>Jun 2022</p>
+            <p>June 2022</p>
             <Badge variant="outline">Python</Badge>
             <Badge variant="outline">SQL</Badge>
           </span>
