@@ -15,7 +15,7 @@ export function About() {
           I started my professional engineering career working under a 16 month internship at <u><Link href="https://www.opg.com/" target="_blank">Ontario Power Generation</Link></u>. There I gained valuable exposure to the nuclear industry, and further strengthened my communication and collaboration skills. I was able to apply the technical skills learned from academics into software applications that improved everyday departmental workflows and operational efficiency, making a real-world impact.
         </p>
         <p>  
-          Currently I am seeking a full-time position in software engineering or related fields beginning of Summer 2026, where I can coninually learn and apply my technical skills into practical applications and further develop my professional computer engineering career.
+          Currently I am seeking a full-time position in software engineering or related fields beginning of Summer 2026, where I can continually learn and apply my technical skills into practical applications and further develop my professional career.
         </p>
       </span>
       <Image

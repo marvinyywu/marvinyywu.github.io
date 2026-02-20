@@ -99,7 +99,7 @@ const otherComponents = [
   },
   {
     src: "/excel-logo.svg",
-    title: "MS Excel",
+    title: "Microsoft Excel",
     alt: "MS Excel logo",
   },
   {

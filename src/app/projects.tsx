@@ -28,15 +28,16 @@ export function Projects() {
         </CardHeader>
         <CardContent>
           <ul className="list-description">
-            <li>Created a multi-factor authentication system integrating audio and visual module components on a STM32 microcontroller.</li>
-            <li>Designed image capturing and pipeline buffering functionality to enable visual recognition and verification in C.</li>
-            <li>Assisted with programming LCD display user interface to present setup configurations and authentication results.</li>
-            <li>Gained hands-on experience with embedded protocols and cross-peripheral integration.</li>
+            <li>Engineered a multi-factor authentication system on an STM32 microcontroller, integrating audio signal processing and camera-based visual verification.</li>
+            <li>Implemented image capture and pipeline buffering in C to support real-time visual recognition and authentication workflows.</li>
+            <li>Developed embedded firmware modules coordinating camera input, audio processing, and system control logic across multiple peripherals.</li>
+            <li>Contributed to LCD-based user interface development to display configuration settings, authentication status, and system feedback.</li>
+            <li>Integrated and debugged embedded communication protocols like SPI, I2C, and UART, ensuring reliable cross-peripheral data transfer and system stability.</li>
           </ul>
         </CardContent>
         <CardFooter>
           <span className="flex overflow-auto gap-4">
-            <p>Jan - Apr 2024</p>
+            <p>January 2024 - April 2024</p>
             <Badge variant="outline">C</Badge>
           </span>
         </CardFooter>
@@ -55,14 +56,17 @@ export function Projects() {
         </CardHeader>
         <CardContent>
           <ul className="list-description">
-            <li>Collaborated with two other teammates to contribute to the fast_float library by resolving issues and creating pull requests.</li>
-            <li>Provided unit tests for the from_chars integer parser to ensure the correctness of the function for all edge cases.</li>
+            <li>Collaborated with a team of three to contribute to the fast_float open-source C++ library by diagnosing reported issues, implementing fixes, and submitting production-ready pull requests.</li>
+            <li>Designed and implemented comprehensive unit tests for the from_chars integer parser, validating correctness across edge cases including boundary values, overflow scenarios, and malformed inputs.</li>
+            <li>Improved parser reliability and robustness by systematically identifying failure cases and expanding automated test coverage.</li>
           </ul>
         </CardContent>
         <CardFooter>
           <span className="flex overflow-auto gap-4">
-            <p>Nov - Dec 2023</p>
+            <p>November 2023 - December 2023</p>
             <Badge variant="outline">C++</Badge>
+            <Badge variant="outline">Git</Badge>
+            <Badge variant="outline">GitHub</Badge>
           </span>
         </CardFooter>
       </Card>
@@ -80,17 +84,16 @@ export function Projects() {
         </CardHeader>
         <CardContent>
           <ul className="list-description">
-            <li>Developed a web application acting as a central database for car dealership branches and customer reviews.</li>
-            <li>Created and stylized navigable pages with static and dynamic elements using HTML, CSS, and JavaScript.</li>
-            <li>Processed API results, built data models, and created proxy services using Python, Django, and SQL.</li>
-            <li>Containerized the application with Docker and deployed it to Kubernetes.</li>
-            <li>Practiced DevOps principles with GitHub actions and code linting.</li>
+            <li>Built a real-world web application serving as the portal for car dealership branches and customer reviews in the United States, achieving a 100% grade and earning my IBM Full Stack Software Developer online professional certificate.</li>
+            <li>Created and stylized six web pages with static and dynamic elements using HTML, CSS, and React components.</li>
+            <li>Processed RESTful API results, produced data models, and established proxy services with JavaScript, Django, and SQL.</li>
+            <li>Constructed a DevOps pipeline by integrating CI/CD action flows and automated code linting with GitHub Actions, containerizing the application with Docker, and automating the deployment process with Kubernetes.</li>
             <li>Utilized database, AI, and storage products from IBM Cloud to implement CRUD cloud functions and to analyze customer review sentiments.</li>
           </ul>
         </CardContent>
         <CardFooter>
           <span className="flex overflow-auto gap-4">
-            <p>Jun - Aug 2023</p>
+            <p>June 2023 - August 2023</p>
             <Badge variant="outline">Python</Badge>
             <Badge variant="outline">HTML</Badge>
             <Badge variant="outline">CSS</Badge>
@@ -113,17 +116,15 @@ export function Projects() {
         </CardHeader>
         <CardContent>
           <ul className="list-description">
-            <li>Worked in a team of three to create a mapping program similar to Google Maps in C++.</li>
-            <li>Designed a GUI that displays the streets, intersections, points of interests, and features found in various cities around the world using the OpenStreetMap database and EZGL graphics package.</li>
-            <li>Implemented local language support, auto-fill search bars, and path finding functionality using the GTK toolkit.</li>
-            <li>Containerized the application with Docker and deployed it to Kubernetes.</li>
-            <li>Developed design and communication skills by coordinating and distributing work among teammates with Git.</li>
-            <li>Tackled the traveling salesman problem using Dijkstra&apos;s algorithm, 2-opt, and parallel multi threading, earning the 5th best solution out of 91 teams.</li>
+            <li>Worked in a team of three to create a C++ mapping program that displays the streets, intersections, and points of interests of 10 major international cities using the OpenStreetMap database and EZGL graphics package.</li>
+            <li>Adopted an Agile methodology by iteratively adding and revising features like local language support, auto-filling searches, and path finding functionality after receiving feedback from teammates and teaching assistants.</li>
+            <li>Strengthened design and communication skills by coordinating and distributing work among teammates with Git.</li>
+            <li>Tackled the Traveling Salesman Problem through a combination of Dijkstra&apos;s algorithm, 2-opt heuristics, and parallel multi-threading to score the rank of 5th fastest solution out of 91 competing teams.</li>
           </ul>
         </CardContent>
         <CardFooter>
           <span className="flex overflow-auto gap-4">
-            <p>Jan - Apr 2023</p>
+            <p>January 2023 - April 2023</p>
             <Badge variant="outline">C++</Badge>
             <Badge variant="outline">Docker</Badge>
             <Badge variant="outline">Kubernetes</Badge>
@@ -144,7 +145,7 @@ export function Projects() {
           </ul>
         </CardContent>
         <CardFooter>
-          <p>Jan - Apr 2022</p>
+          <p>January 2022 - April 2022</p>
         </CardFooter>
       </Card>
     </div>

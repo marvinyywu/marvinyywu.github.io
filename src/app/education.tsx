@@ -25,7 +25,7 @@ export function Education() {
     <Card className="card">
       <CardHeader>
         <CardTitle className="card-title">University of Toronto - St. George</CardTitle>
-        <CardDescription id="card-description">B.A.Sc. in Computer Engineering + PEY Co-op</CardDescription>
+        <CardDescription id="card-description">Bachelor of Applied Science in Computer Engineering + PEY Co-Op</CardDescription>
       </CardHeader>
       <CardContent>
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Relevant Courseworks</h3>
@@ -36,7 +36,7 @@ export function Education() {
         </ul>
       </CardContent>
       <CardFooter>
-        <p>Sep 2021 - May 2026 (expected) | Toronto, Ontario</p>
+        <p>September 2021 - May 2026 (expected) | Toronto, Ontario</p>
       </CardFooter>
     </Card>
   )

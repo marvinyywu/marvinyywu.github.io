@@ -25,7 +25,7 @@ export function Contact() {
         </Link>
       </Item>
       <Item variant="outline" asChild>
-        <Link href="https://www.linkedin.com/in/marvin-wu-693991248/" target="_blank">
+        <Link href="https://www.linkedin.com/in/marvinyywu/" target="_blank">
           <ItemMedia>
             <FaLinkedin className="size-5" />
           </ItemMedia>
@@ -47,7 +47,7 @@ export function Contact() {
         </Link>
       </Item>
       <Item variant="outline" asChild>
-        <Link href="/resume.pdf" target="_blank">
+        <Link href="/Resume_Marvin_Wu.pdf" target="_blank">
           <ItemMedia>
             <IoDocumentText className="size-5" />
           </ItemMedia>
