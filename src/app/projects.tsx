@@ -17,6 +17,35 @@ export function Projects() {
       <Card className="card">
         <CardHeader>
           <CardTitle className="card-title relative">
+            Mobile 3D Facial Reconstruction Design Project
+            <Button variant="outline" className="absolute right-0 top-0 w-12 h-12">
+              <Link href="https://github.com/y2k3n/ece496-face-recon" target="_blank">
+                <FaGithub/>
+              </Link>
+            </Button>
+          </CardTitle>
+          <CardDescription id="card-description">Co-Developer</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-description">
+            <li>Engineered an 3D face reconstruction mobile application in Java using camera-only input and a 3D Morphable Model approach, broadening accessibility to AR/VR, digital avatar, and biometric use for general consumers at no cost.</li>
+            <li>Designed a multi-stage reconstruction pipeline that includes landmark detection, shape/pose fitting with joint optimization, and texture mapping to achieve a sub-5-minute model generation with meshes exceeding 1,000 triangles.</li>
+            <li>Validated model accuracy across multiple devices and datasets to achieve a mean facial landmark error of 3.92 mm.</li>
+            <li>Contributed to LCD-based user interface development to display configuration settings, authentication status, and system feedback.</li>
+            <li>Identified delta from the 2.0 mm target and defined a roadmap for future accuracy and mesh quality improvements.</li>
+          </ul>
+        </CardContent>
+        <CardFooter>
+          <span className="flex overflow-auto gap-4">
+            <p>September 2025 - March 2026</p>
+            <Badge variant="outline">Java</Badge>
+            <Badge variant="outline">Android Studio</Badge>
+          </span>
+        </CardFooter>
+      </Card>
+      <Card className="card">
+        <CardHeader>
+          <CardTitle className="card-title relative">
             Audio-Visual Authentication System
             <Button variant="outline" className="absolute right-0 top-0 w-12 h-12">
               <Link href="https://github.com/marvinyywu/Audio-Visual-Authentication-System" target="_blank">

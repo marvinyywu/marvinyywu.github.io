@@ -29,6 +29,11 @@ const languageComponents = [
     alt: "Python logo",
   },
   {
+    src: "/java-logo.svg",
+    title: "Java",
+    alt: "Java logo",
+  },
+  {
     src: "/html-logo.svg",
     title: "HTML",
     alt: "HTML logo",
@@ -96,6 +101,11 @@ const otherComponents = [
     src: "/github-logo.svg",
     title: "GitHub",
     alt: "GitHub logo",
+  },
+  {
+    src:"/androidstudio-logo.svg",
+    title: "Android Studio",
+    alt: "Android Studio logo",
   },
   {
     src: "/excel-logo.svg",

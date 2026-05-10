@@ -55,7 +55,7 @@ export default function Home() {
         </section>
         <footer>
           <div className="text-sm leading-none font-medium text-center">
-            <p>© 2025 Marvin Wu</p>
+            <p>© 2026 Marvin Wu</p>
           </div>
         </footer>
       </div>
