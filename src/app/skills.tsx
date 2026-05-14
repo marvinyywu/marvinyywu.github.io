@@ -1,251 +1,92 @@
-"use client"
-
-import * as React from "react"
-import Image from "next/image"
-import Autoplay from "embla-carousel-autoplay"
 import { Card, CardContent } from "@/components/ui/card"
+import type { IconType } from "react-icons"
+import { FaJava, FaHtml5, FaCss3Alt, FaReact, FaDocker, FaGit, FaGithub } from "react-icons/fa"
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+  SiC, SiCplusplus, SiPython, SiJavascript,
+  SiDjango, SiFlask, SiExpress, SiBootstrap,
+  SiKubernetes, SiAndroidstudio, SiAnthropic,
+} from "react-icons/si"
+import { BsDatabase, BsFillFileExcelFill, BsFillBarChartFill, BsCloudFill } from "react-icons/bs"
 
-const languageComponents = [
-  {
-    src: "/c-logo.svg",
-    title: "C",
-    alt: "C logo",
-  },
-  {
-    src: "/cpp-logo.svg",
-    title: "C++",
-    alt: "C++ logo",
-  },
-  {
-    src: "/python-logo.svg",
-    title: "Python",
-    alt: "Python logo",
-  },
-  {
-    src: "/java-logo.svg",
-    title: "Java",
-    alt: "Java logo",
-  },
-  {
-    src: "/html-logo.svg",
-    title: "HTML",
-    alt: "HTML logo",
-  },
-  {
-    src: "/css-logo.svg",
-    title: "CSS",
-    alt: "CSS logo",
-  },
-  {
-    src: "/javascript-logo.svg",
-    title: "JavaScript",
-    alt: "JavaScript logo",
-  },
-  {
-    src: "/sql-logo.svg",
-    title: "SQL",
-    alt: "SQL logo",
-  },
-];
-const frameworksComponents = [
-  {
-    src: "/django-logo.svg",
-    title: "Django",
-    alt: "Django logo",
-  },
-  {
-    src: "/flask-logo.svg",
-    title: "Flask",
-    alt: "Flask logo",
-  },
-  {
-    src: "/expressjs-logo.webp",
-    title: "Express.js",
-    alt: "Express.js logo",
-  },
-  {
-    src: "/react-logo.svg",
-    title: "React",
-    alt: "React logo",
-  },
-  {
-    src: "/bootstrap-logo.svg",
-    title: "Bootstrap",
-    alt: "Bootstrap logo",
-  },
-];
-const otherComponents = [
-  {
-    src: "/docker-logo.svg",
-    title: "Docker",
-    alt: "Docker logo",
-  },
-  {
-    src: "/kubernetes-logo.svg",
-    title: "Kubernetes",
-    alt: "Kubernetes logo",
-  },
-  {
-    src: "/git-logo.svg",
-    title: "Git",
-    alt: "Git logo",
-  },
-  {
-    src: "/github-logo.svg",
-    title: "GitHub",
-    alt: "GitHub logo",
-  },
-  {
-    src:"/androidstudio-logo.svg",
-    title: "Android Studio",
-    alt: "Android Studio logo",
-  },
-  {
-    src: "/excel-logo.svg",
-    title: "Microsoft Excel",
-    alt: "MS Excel logo",
-  },
-  {
-    src: "/powerbi-logo.svg",
-    title: "Power BI",
-    alt: "Power BI logo",
-  },
-  {
-    src: "/ibmcloud-logo.svg",
-    title: "IBM Cloud",
-    alt: "IBM Cloud logo",
-  }
+type SkillItem = {
+  icon: IconType | null;
+  title: string;
+};
+
+const languageComponents: SkillItem[] = [
+  { icon: SiC, title: "C" },
+  { icon: SiCplusplus, title: "C++" },
+  { icon: SiPython, title: "Python" },
+  { icon: FaJava, title: "Java" },
+  { icon: FaHtml5, title: "HTML" },
+  { icon: FaCss3Alt, title: "CSS" },
+  { icon: SiJavascript, title: "JavaScript" },
+  { icon: BsDatabase, title: "SQL" },
 ];
 
-export function LanguagesCarousel() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  )
+const frameworksComponents: SkillItem[] = [
+  { icon: SiDjango, title: "Django" },
+  { icon: SiFlask, title: "Flask" },
+  { icon: SiExpress, title: "Express.js" },
+  { icon: FaReact, title: "React" },
+  { icon: SiBootstrap, title: "Bootstrap" },
+];
+
+const otherComponents: SkillItem[] = [
+  { icon: FaDocker, title: "Docker" },
+  { icon: SiKubernetes, title: "Kubernetes" },
+  { icon: FaGit, title: "Git" },
+  { icon: FaGithub, title: "GitHub" },
+  { icon: SiAndroidstudio, title: "Android Studio" },
+  { icon: BsFillFileExcelFill, title: "Microsoft Excel" },
+  { icon: BsFillBarChartFill, title: "Power BI" },
+  { icon: BsCloudFill, title: "IBM Cloud" },
+  { icon: SiAnthropic, title: "Claude Code" },
+];
+
+function SkillCard({ icon: Icon, title }: SkillItem) {
   return (
-    <Carousel
-      plugins={[plugin.current]}
-      className="w-full px-16"
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
-    >
-      <CarouselContent>
-        {languageComponents.map((item) => (
-          <CarouselItem
-            key={item.title}
-            className="sm:basis-1/3 lg:basis-1/5"
-          >
-            <Card className="card">
-              <CardContent className="flex flex-col aspect-square items-center justify-center p-6">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={64}
-                  height={64}
-                  className="h-16 w-auto"
-                />
-                <div className="text-lg font-semibold pt-4">{item.title}</div>
-              </CardContent>
-            </Card>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <span className="absolute top-1/2 left-2 flex items-center justify-center">
-        <CarouselPrevious className="relative left-0" />
-      </span>
-      <span className="absolute top-1/2 right-2 flex items-center justify-center">
-        <CarouselNext className="relative right-0" />
-      </span>
-    </Carousel>
+    <Card className="transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 hover:border-primary/30">
+      <CardContent className="flex flex-col items-center justify-center p-4 pt-4 gap-2">
+        {Icon ? (
+          <Icon size={48} />
+        ) : (
+          <div className="h-12 w-12 flex items-center justify-center rounded-md bg-muted text-muted-foreground text-lg font-bold border border-dashed border-muted-foreground/40">
+            ?
+          </div>
+        )}
+        <span className="text-sm font-medium text-center leading-tight">{title}</span>
+      </CardContent>
+    </Card>
   )
 }
 
-export function FrameworksCarousel() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  )
+export function LanguagesGrid() {
   return (
-    <Carousel
-      plugins={[plugin.current]}
-      className="w-full px-16"
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
-    >
-      <CarouselContent>
-        {frameworksComponents.map((item) => (
-          <CarouselItem
-            key={item.title}
-            className="sm:basis-1/3 lg:basis-1/5"
-          >
-            <Card>
-              <CardContent className="flex flex-col aspect-square items-center justify-center p-6 gap-3">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={64}
-                  height={64}
-                  className="h-16 w-auto"
-                />
-                <div className="text-lg font-semibold pt-4">{item.title}</div>
-              </CardContent>
-            </Card>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <span className="absolute top-1/2 left-2 flex items-center justify-center">
-        <CarouselPrevious className="relative left-0" />
-      </span>
-      <span className="absolute top-1/2 right-2 flex items-center justify-center">
-        <CarouselNext className="relative right-0" />
-      </span>
-    </Carousel>
+    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+      {languageComponents.map((item) => (
+        <SkillCard key={item.title} {...item} />
+      ))}
+    </div>
   )
 }
 
-export function OtherCarousel() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  )
+export function FrameworksGrid() {
   return (
-    <Carousel
-      plugins={[plugin.current]}
-      className="w-full px-16"
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
-    >
-      <CarouselContent>
-        {otherComponents.map((item) => (
-          <CarouselItem
-            key={item.title}
-            className="sm:basis-1/3 lg:basis-1/5"
-          >
-              <Card>
-                <CardContent className="flex flex-col aspect-square items-center justify-center p-6 gap-3">
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    width={64}
-                    height={64}
-                    className="h-16 w-auto"
-                  />
-                <div className="text-lg font-semibold pt-4">{item.title}</div>
-                </CardContent>
-              </Card>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <span className="absolute top-1/2 left-2 flex items-center justify-center">
-        <CarouselPrevious className="relative left-0" />
-      </span>
-      <span className="absolute top-1/2 right-2 flex items-center justify-center">
-        <CarouselNext className="relative right-0" />
-      </span>
-    </Carousel>
+    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+      {frameworksComponents.map((item) => (
+        <SkillCard key={item.title} {...item} />
+      ))}
+    </div>
+  )
+}
+
+export function OtherGrid() {
+  return (
+    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+      {otherComponents.map((item) => (
+        <SkillCard key={item.title} {...item} />
+      ))}
+    </div>
   )
 }

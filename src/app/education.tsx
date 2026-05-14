@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-const coursesComponents = [
+const courses = [
   "Software Engineering",
   "Software Communication & Design",
   "Algorithms and Data Structures",
@@ -18,25 +18,32 @@ const coursesComponents = [
   "Computer Architecture",
   "Applied Fundamentals of Deep Learning",
   "Introduction to Machine Learning",
-];
+  "Computer Networks",
+  "Computer Security"
+]
 
 export function Education() {
   return (
     <Card className="card">
       <CardHeader>
         <CardTitle className="card-title">University of Toronto - St. George</CardTitle>
-        <CardDescription id="card-description">Bachelor of Applied Science in Computer Engineering + PEY Co-Op</CardDescription>
+        <CardDescription className="text-base font-semibold text-foreground">Bachelor of Applied Science in Computer Engineering + PEY Co-op</CardDescription>
       </CardHeader>
       <CardContent>
-        <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Relevant Courseworks</h3>
-        <ul className="list-description">
-          {coursesComponents.map((course, index) => (
-            <li key={index}>{course}</li>
+        <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4 mt-0">Relevant Coursework</p>
+        <div className="flex flex-wrap gap-2">
+          {courses.map((course) => (
+            <span
+              key={course}
+              className="px-3 py-1 text-sm rounded-full border border-border bg-muted/50 text-foreground"
+            >
+              {course}
+            </span>
           ))}
-        </ul>
+        </div>
       </CardContent>
       <CardFooter>
-        <p>September 2021 - May 2026 (expected) | Toronto, Ontario</p>
+        <p className="mt-0 text-sm text-muted-foreground">September 2021 - May 2026 | Toronto, Ontario</p>
       </CardFooter>
     </Card>
   )
