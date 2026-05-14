@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { ChevronDown } from "lucide-react"
 import { Navigation } from "./navigation"
 import { About } from "./about"
 import { Experience } from "./experience"
