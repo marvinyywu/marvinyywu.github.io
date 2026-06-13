@@ -3,7 +3,7 @@ import { Navigation } from "./navigation"
 import { About } from "./about"
 import { Experience } from "./experience"
 import { Projects } from "./projects"
-import { LanguagesGrid, FrameworksGrid, OtherGrid } from "./skills"
+import { SkillGrid, skillCategories } from "./skills"
 import { Education } from "./education"
 import { Certifications } from "./certifications"
 import { Contact } from "./contact"
@@ -18,7 +18,7 @@ export default function Home() {
         <div
           className="absolute inset-0 pointer-events-none"/>
         <div className="text-center max-w-2xl relative">
-          <div className="hero-item-1">
+          <AnimatedSection delay={50}>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium border border-primary/40 bg-primary/5 text-primary">
               <span className="relative flex size-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
@@ -26,15 +26,15 @@ export default function Home() {
               </span>
               Available for roles starting Summer 2026
             </div>
-          </div>
-          <div className="hero-item-2 mt-6">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+          </AnimatedSection>
+          <AnimatedSection className="mt-6" delay={180}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-[linear-gradient(to_right,hsl(var(--foreground))_20%,hsl(var(--primary))_40%,hsl(var(--primary))_60%,hsl(var(--foreground))_80%)] bg-[length:200%_auto] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] animate-shine">
               Marvin Wu
             </h1>
-          </div>
-          <div className="hero-item-5 mt-8">
+          </AnimatedSection>
+          <AnimatedSection className="mt-8" delay={570}>
             <Contact />
-          </div>
+          </AnimatedSection>
         </div>
       </div>
 
@@ -73,15 +73,19 @@ export default function Home() {
           </AnimatedSection>
           <AnimatedSection className="pb-8" delay={0}>
             <p className="mt-0 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">Languages</p>
-            <LanguagesGrid />
+            <SkillGrid items={skillCategories.languages} />
           </AnimatedSection>
           <AnimatedSection className="border-t border-border/40 py-8" delay={100}>
             <p className="mt-0 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">Frameworks</p>
-            <FrameworksGrid />
+            <SkillGrid items={skillCategories.frameworks} />
           </AnimatedSection>
           <AnimatedSection className="border-t border-border/40 pt-8" delay={200}>
+            <p className="mt-0 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">Libraries</p>
+            <SkillGrid items={skillCategories.libraries} />
+          </AnimatedSection>
+          <AnimatedSection className="border-t border-border/40 pt-8" delay={300}>
             <p className="mt-0 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">Tools</p>
-            <OtherGrid />
+            <SkillGrid items={skillCategories.other} />
           </AnimatedSection>
         </div>
       </section>
@@ -119,9 +123,9 @@ export default function Home() {
           <div className="flex flex-col items-center gap-4">
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
               <Link href="mailto:mwu0614@gmail.com" className="hover:text-primary transition-colors">Email</Link>
-              <Link href="https://www.linkedin.com/in/marvinyywu/" target="_blank" className="hover:text-primary transition-colors">LinkedIn</Link>
-              <Link href="https://github.com/marvinyywu" target="_blank" className="hover:text-primary transition-colors">GitHub</Link>
-              <Link href="/Resume_Marvin_Wu.pdf" target="_blank" className="hover:text-primary transition-colors">Resume</Link>
+              <Link href="https://www.linkedin.com/in/marvinyywu/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</Link>
+              <Link href="https://github.com/marvinyywu" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</Link>
+              <Link href="/Resume_Marvin_Wu.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Resume</Link>
             </div>
             <p className="text-sm text-muted-foreground mt-0">© 2026 Marvin Wu</p>
           </div>

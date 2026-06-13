@@ -26,6 +26,7 @@ export function Contact() {
           key={label}
           href={href}
           target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
           className="group flex items-center gap-2.5 px-5 py-2.5 rounded-xl border border-border hover:border-primary/50 hover:bg-primary/5 hover:text-primary transition-all duration-200"
         >
           <Icon className="size-4 shrink-0" />

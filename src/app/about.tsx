@@ -7,14 +7,14 @@ export function About() {
       <div className="flex-1">
         <p>
           I am a 4th year Computer Engineering student at the{" "}
-          <Link href="https://www.utoronto.ca/" target="_blank" className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
+          <Link href="https://www.utoronto.ca/" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
             University of Toronto
           </Link>
           . I specialize in software engineering with additional experience in hardware systems, machine learning, and data analysis. I am most proficient with C, C++, and Python, and have developed projects using React, Flask, and Django frameworks. I am driven by a passion for producing high-quality software that demonstrates innovative and thoughtful design.
         </p>
         <p>
           I started my professional engineering career working under a 16 month internship at{" "}
-          <Link href="https://www.opg.com/" target="_blank" className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
+          <Link href="https://www.opg.com/" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
             Ontario Power Generation
           </Link>
           . There I gained valuable exposure to the nuclear industry, and further strengthened my communication and collaboration skills. I was able to apply the technical skills learned from academics into software applications that improved everyday departmental workflows and operational efficiency, making a real-world impact.

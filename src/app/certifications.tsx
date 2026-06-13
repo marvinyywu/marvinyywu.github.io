@@ -61,7 +61,7 @@ export function Certifications() {
               <CardTitle className="card-title relative pr-14">
                 {cert.title}
                 <Button variant="outline" size="icon" className="absolute right-0 top-0" asChild>
-                  <Link href={cert.link} target="_blank">
+                  <Link href={cert.link} target="_blank" rel="noopener noreferrer">
                     <ExternalLink />
                   </Link>
                 </Button>

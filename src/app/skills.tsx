@@ -1,12 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card"
 import type { IconType } from "react-icons"
-import { FaJava, FaHtml5, FaCss3Alt, FaReact, FaDocker, FaGit, FaGithub } from "react-icons/fa"
+import { FaJava, FaHtml5, FaCss3Alt, FaReact, FaDocker, FaGit, FaGithub, FaAws } from "react-icons/fa"
 import {
   SiC, SiCplusplus, SiPython, SiJavascript,
-  SiDjango, SiFlask, SiExpress, SiBootstrap,
+  SiTypescript, SiNextdotjs, SiNodedotjs,
+  SiDjango, SiFlask, SiLangchain,
+  SiPandas, SiTensorflow, SiScikitlearn, SiJunit5,
   SiKubernetes, SiAndroidstudio, SiAnthropic,
+  SiNumpy, SiHuggingface, SiOpencv,
+  SiSpring, SiPostgresql, SiStmicroelectronics,
 } from "react-icons/si"
 import { BsDatabase, BsFillFileExcelFill, BsFillBarChartFill, BsCloudFill } from "react-icons/bs"
+import { TbChartLine, TbTestPipe, TbContainer } from "react-icons/tb"
 
 type SkillItem = {
   icon: IconType | null;
@@ -21,15 +26,31 @@ const languageComponents: SkillItem[] = [
   { icon: FaHtml5, title: "HTML" },
   { icon: FaCss3Alt, title: "CSS" },
   { icon: SiJavascript, title: "JavaScript" },
+  { icon: SiTypescript, title: "TypeScript" },
   { icon: BsDatabase, title: "SQL" },
 ];
 
 const frameworksComponents: SkillItem[] = [
   { icon: SiDjango, title: "Django" },
   { icon: SiFlask, title: "Flask" },
-  { icon: SiExpress, title: "Express.js" },
-  { icon: FaReact, title: "React" },
-  { icon: SiBootstrap, title: "Bootstrap" },
+  { icon: SiNodedotjs, title: "Node.js" },
+  { icon: FaReact, title: "React.js" },
+  { icon: SiNextdotjs, title: "Next.js" },
+  { icon: SiSpring, title: "Spring Boot" },
+  { icon: SiLangchain, title: "LangChain" },
+];
+
+const librariesComponents: SkillItem[] = [
+  { icon: SiPandas, title: "Pandas" },
+  { icon: SiNumpy, title: "NumPy" },
+  { icon: SiTensorflow, title: "TensorFlow" },
+  { icon: SiScikitlearn, title: "Scikit-learn" },
+  { icon: TbChartLine, title: "Matplotlib" },
+  { icon: SiJunit5, title: "JUnit" },
+  { icon: TbTestPipe, title: "Mockito" },
+  { icon: TbContainer, title: "Testcontainers" },
+  { icon: SiHuggingface, title: "HuggingFace" },
+  { icon: SiOpencv, title: "OpenCV" },
 ];
 
 const otherComponents: SkillItem[] = [
@@ -40,8 +61,11 @@ const otherComponents: SkillItem[] = [
   { icon: SiAndroidstudio, title: "Android Studio" },
   { icon: BsFillFileExcelFill, title: "Microsoft Excel" },
   { icon: BsFillBarChartFill, title: "Power BI" },
-  { icon: BsCloudFill, title: "IBM Cloud" },
+  { icon: FaAws, title: "Amazon Web Services" },
   { icon: SiAnthropic, title: "Claude Code" },
+  { icon: SiPostgresql, title: "PostgreSQL" },
+  { icon: SiStmicroelectronics, title: "STM32" },
+  { icon: BsCloudFill, title: "IBM Cloud" },
 ];
 
 function SkillCard({ icon: Icon, title }: SkillItem) {
@@ -61,30 +85,17 @@ function SkillCard({ icon: Icon, title }: SkillItem) {
   )
 }
 
-export function LanguagesGrid() {
-  return (
-    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-      {languageComponents.map((item) => (
-        <SkillCard key={item.title} {...item} />
-      ))}
-    </div>
-  )
+export const skillCategories = {
+  languages: languageComponents,
+  frameworks: frameworksComponents,
+  libraries: librariesComponents,
+  other: otherComponents,
 }
 
-export function FrameworksGrid() {
+export function SkillGrid({ items }: { items: SkillItem[] }) {
   return (
     <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-      {frameworksComponents.map((item) => (
-        <SkillCard key={item.title} {...item} />
-      ))}
-    </div>
-  )
-}
-
-export function OtherGrid() {
-  return (
-    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-      {otherComponents.map((item) => (
+      {items.map((item) => (
         <SkillCard key={item.title} {...item} />
       ))}
     </div>

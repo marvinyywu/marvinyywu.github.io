@@ -1,156 +1,131 @@
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { AnimatedSection } from "./animated-section"
 
 interface Project {
   title: string
-  role: string
+  description: string
   period: string
-  bullets: string[]
   tags: string[]
   githubUrl?: string
+  image?: string
 }
 
 const projects: Project[] = [
   {
-    title: "Mobile 3D Facial Reconstruction Design Project",
-    role: "Co-Developer",
+    title: "RAG Knowledge Base",
+    description: "Built a retrieval-augmented generation pipeline that lets users upload documents and ask questions, returning context-grounded answers via vector search instead of generic LLM responses, deployed on AWS.",
+    period: "June 2026",
+    githubUrl: "https://github.com/marvinyywu/rag-knowledge-base",
+    tags: ["Python", "TypeScript", "Next.js", "LangChain", "HuggingFace", "AWS"],
+    image: "/rag-knowledge-base.png"
+  },
+  {
+    title: "Personal Finance Manager REST API",
+    description: "Designed a production-style Spring Boot REST API with JWT-secured endpoints, category-based spending analytics, and atomic multi-account transfers, validated by a containerized integration test suite using JUnit, Mockito, and Testcontainers.",
+    period: "June 2026",
+    githubUrl: "https://github.com/marvinyywu/PersonalFinanceManager",
+    tags: ["Java", "Spring Boot", "PostgreSQL", "JUnit", "Mockito", "Testcontainers", "Docker"],
+    image: "/personal-finance-manager.jpeg",
+  },
+  {
+    title: "Toronto Bike Share Demand Predictor",
+    description: "Trained a deep learning model to forecast daily bike share demand across Toronto from historical ridership, weather, and calendar features, reaching 85% accuracy on held-out test data.",
+    period: "May 2026",
+    githubUrl: "https://github.com/marvinyywu/TorontoBikeShareDemandPrediction",
+    tags: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Git", "GitHub"],
+    image: "/toronto-bike-share.jpg",
+  },
+  {
+    title: "Mobile 3D Facial Reconstruction",
+    description: "Built an Android app that reconstructs a 3D face mesh from camera-only input using a 3D Morphable Model pipeline, generating results in under 5 minutes on-device.",
     period: "September 2025 - March 2026",
     githubUrl: "https://github.com/y2k3n/ece496-face-recon",
-    tags: ["Java", "Android Studio"],
-    bullets: [
-      "Engineered an 3D face reconstruction mobile application in Java using camera-only input and a 3D Morphable Model approach, broadening accessibility to AR/VR, digital avatar, and biometric use for general consumers at no cost.",
-      "Designed a multi-stage reconstruction pipeline that includes landmark detection, shape/pose fitting with joint optimization, and texture mapping to achieve a sub-5-minute model generation with meshes exceeding 1,000 triangles.",
-      "Validated model accuracy across multiple devices and datasets to achieve a mean facial landmark error of 3.92 mm.",
-      "Contributed to LCD-based user interface development to display configuration settings, authentication status, and system feedback.",
-      "Identified delta from the 2.0 mm target and defined a roadmap for future accuracy and mesh quality improvements.",
-    ],
+    tags: ["Java", "Android Studio", "OpenCV", "Git", "GitHub"],
+    image: "/3d-facial-reconstruction.png",
   },
   {
     title: "Audio-Visual Authentication System",
-    role: "Co-Developer",
+    description: "Engineered a multi-factor authentication system on an STM32 microcontroller that combines real-time audio signal processing with camera-based face verification to resist single-sensor spoofing.",
     period: "January 2024 - April 2024",
     githubUrl: "https://github.com/marvinyywu/Audio-Visual-Authentication-System",
-    tags: ["C"],
-    bullets: [
-      "Engineered a multi-factor authentication system on an STM32 microcontroller, integrating audio signal processing and camera-based visual verification.",
-      "Implemented image capture and pipeline buffering in C to support real-time visual recognition and authentication workflows.",
-      "Developed embedded firmware modules coordinating camera input, audio processing, and system control logic across multiple peripherals.",
-      "Contributed to LCD-based user interface development to display configuration settings, authentication status, and system feedback.",
-      "Integrated and debugged embedded communication protocols like SPI, I2C, and UART, ensuring reliable cross-peripheral data transfer and system stability.",
-    ],
+    tags: ["C", "STM32"],
+    image: "/audio-visual-authentication.jpg",
   },
   {
-    title: "Fast Float Library",
-    role: "Contributor",
-    period: "November 2023 - December 2023",
-    githubUrl: "https://github.com/fastfloat/fast_float/pull/231",
-    tags: ["C++", "Git", "GitHub"],
-    bullets: [
-      "Collaborated with a team of three to contribute to the fast_float open-source C++ library by diagnosing reported issues, implementing fixes, and submitting production-ready pull requests.",
-      "Designed and implemented comprehensive unit tests for the from_chars integer parser, validating correctness across edge cases including boundary values, overflow scenarios, and malformed inputs.",
-      "Improved parser reliability and robustness by systematically identifying failure cases and expanding automated test coverage.",
-    ],
+    title: "Faster R-CNN Object Detection",
+    description: "Implemented and trained a Faster R-CNN object detection model in TensorFlow, achieving 70% mAP on the COCO dataset and optimizing inference speed for real-time applications.",
+    period: "September 2023 - December 2023",
+    tags: ["Python", "Pandas", "NumPy", "TensorFlow", "Git", "GitHub"],
+    image: "/faster-rcnn-detector.jpg",
   },
   {
     title: "Full Stack Cloud Development Capstone",
-    role: "Student",
+    description: "Built a dealership review portal end-to-end with a React frontend and Django REST backend, deployed via a full DevOps pipeline using Docker and Kubernetes on IBM Cloud.",
     period: "June 2023 - August 2023",
     githubUrl: "https://github.com/marvinyywu/agfzb-CloudAppDevelopment_Capstone",
-    tags: ["Python", "HTML", "CSS", "JavaScript", "Django", "React", "Bootstrap", "Docker", "Kubernetes", "Git", "GitHub", "IBM Cloud"],
-    bullets: [
-      "Built a real-world web application serving as the portal for car dealership branches and customer reviews in the United States, achieving a 100% grade and earning my IBM Full Stack Software Developer online professional certificate.",
-      "Created and stylized six web pages with static and dynamic elements using HTML, CSS, and React components.",
-      "Processed RESTful API results, produced data models, and established proxy services with JavaScript, Django, and SQL.",
-      "Constructed a DevOps pipeline by integrating CI/CD action flows and automated code linting with GitHub Actions, containerizing the application with Docker, and automating the deployment process with Kubernetes.",
-      "Utilized database, AI, and storage products from IBM Cloud to implement CRUD cloud functions and to analyze customer review sentiments.",
-    ],
+    tags: ["Python", "Django", "React", "Node.js", "Docker", "Kubernetes", "IBM Cloud"],
+    image: "/full-stack-development.jpg",
   },
   {
-    title: "Geographic Information System Software Program",
-    role: "Team Member",
+    title: "Geographic Information System",
+    description: "Developed a C++ mapping application for visualizing streets, intersections, and points of interest across 10 major cities, with a custom path-finding algorithm that ranked 5th fastest out of 91 teams.",
     period: "January 2023 - April 2023",
-    tags: ["C++", "Docker", "Kubernetes", "Git"],
-    bullets: [
-      "Worked in a team of three to create a C++ mapping program that displays the streets, intersections, and points of interests of 10 major international cities using the OpenStreetMap database and EZGL graphics package.",
-      "Adopted an Agile methodology by iteratively adding and revising features like local language support, auto-filling searches, and path finding functionality after receiving feedback from teammates and teaching assistants.",
-      "Strengthened design and communication skills by coordinating and distributing work among teammates with Git.",
-      "Tackled the Traveling Salesman Problem through a combination of Dijkstra's algorithm, 2-opt heuristics, and parallel multi-threading to score the rank of 5th fastest solution out of 91 competing teams.",
-    ],
-  },
-  {
-    title: "Engineering Strategies and Practice Design Project",
-    role: "Team Leader",
-    period: "January 2022 - April 2022",
-    tags: [],
-    bullets: [
-      "Collaborated in a team of six to create a technological design that improves the ways of communication for a patient with Cerebral Palsy.",
-      "Led team discussions and ensured equal team participation by giving everyone a chance to be heard and taking initiative in discussions when no one else will.",
-      "Motivated team members with encouraging words and bringing a positive attitude to every meeting.",
-    ],
+    tags: ["C++", "Docker", "Git"],
+    image: "/gis.jpg",
   },
 ]
 
 export function Projects() {
   return (
-    <div className="relative">
-      <div className="absolute left-[13px] top-8 bottom-8 w-px bg-border" />
-      <div className="space-y-8">
-        {projects.map((project, index) => (
-          <AnimatedSection key={project.title} delay={index * 80}>
-            <div className="flex gap-5">
-              <div className="relative z-10 shrink-0 mt-1.5 flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-background">
-                <div className="h-2.5 w-2.5 rounded-full bg-primary" />
-              </div>
-
-              <Card className="flex-1 transition-all duration-200 hover:shadow-lg hover:-translate-y-1 hover:border-primary/30">
-                <CardHeader>
-                  <CardTitle className="card-title relative pr-14">
-                    {project.title}
-                    {project.githubUrl && (
-                      <Button variant="outline" size="icon" className="absolute right-0 top-0">
-                        <Link href={project.githubUrl} target="_blank">
-                          <FaGithub />
-                        </Link>
-                      </Button>
-                    )}
-                  </CardTitle>
-                  <CardDescription className="text-base font-semibold text-foreground">{project.role}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="list-description">
-                    {project.bullets.map((bullet, i) => (
-                      <li key={i}>{bullet}</li>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <div className="space-y-2 w-full">
-                    <p className="mt-0 text-sm text-muted-foreground">{project.period}</p>
-                    {project.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map(tag => (
-                          <Badge key={tag} variant="outline" className="font-mono">{tag}</Badge>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </CardFooter>
-              </Card>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {projects.map((project, index) => (
+        <AnimatedSection key={project.title} delay={index * 60}>
+          <Card className="rounded-2xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-200 h-full flex flex-col">
+            {/* Preview area */}
+            <div className="relative h-44 shrink-0 overflow-hidden">
+              <Image
+                src={project.image || "/placeholder.svg"}
+                alt={project.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover"
+              />
+              {project.githubUrl ? (
+                <Link
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-3 right-3 p-2 rounded-full bg-black/20 text-white hover:bg-black/35 transition-colors"
+                >
+                  <FaGithub size={18} />
+                </Link>
+              ) : (
+                <span className="absolute top-3 right-3 px-2 py-1 rounded-full bg-black/20 text-white text-xs">
+                  N/A
+                </span>
+              )}
             </div>
-          </AnimatedSection>
-        ))}
-      </div>
+
+            {/* Content */}
+            <CardContent className="p-5 flex flex-col flex-1">
+              <p className="text-xs text-muted-foreground mb-1.5">{project.period}</p>
+              <h3 className="font-bold text-base leading-snug mb-2 mt-0">{project.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">{project.description}</p>
+              {project.tags.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mt-4">
+                  {project.tags.map(tag => (
+                    <Badge key={tag} variant="outline" className="font-mono text-xs">{tag}</Badge>
+                  ))}
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </AnimatedSection>
+      ))}
     </div>
   )
 }
