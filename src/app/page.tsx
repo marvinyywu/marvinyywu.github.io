@@ -18,15 +18,6 @@ export default function Home() {
         <div
           className="absolute inset-0 pointer-events-none"/>
         <div className="text-center max-w-2xl relative">
-          <AnimatedSection delay={50}>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium border border-primary/40 bg-primary/5 text-primary">
-              <span className="relative flex size-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
-                <span className="relative inline-flex size-2 rounded-full bg-primary" />
-              </span>
-              Available for roles starting Summer 2026
-            </div>
-          </AnimatedSection>
           <AnimatedSection className="mt-6" delay={180}>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-[linear-gradient(to_right,hsl(var(--foreground))_20%,hsl(var(--primary))_40%,hsl(var(--primary))_60%,hsl(var(--foreground))_80%)] bg-[length:200%_auto] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] animate-shine">
               Marvin Wu
@@ -79,11 +70,11 @@ export default function Home() {
             <p className="mt-0 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">Frameworks</p>
             <SkillGrid items={skillCategories.frameworks} />
           </AnimatedSection>
-          <AnimatedSection className="border-t border-border/40 pt-8" delay={200}>
+          <AnimatedSection className="border-t border-border/40 py-8" delay={200}>
             <p className="mt-0 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">Libraries</p>
             <SkillGrid items={skillCategories.libraries} />
           </AnimatedSection>
-          <AnimatedSection className="border-t border-border/40 pt-8" delay={300}>
+          <AnimatedSection className="border-t border-border/40 py-8" delay={300}>
             <p className="mt-0 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">Tools</p>
             <SkillGrid items={skillCategories.other} />
           </AnimatedSection>
@@ -107,15 +98,6 @@ export default function Home() {
           <Certifications />
         </div>
       </section>
-
-      {/* <section id="contact">
-        <div className="max-w-5xl mx-auto px-6">
-          <AnimatedSection>
-            <h2>Contact</h2>
-            <Contact />
-          </AnimatedSection>
-        </div>
-      </section>*/}
 
       {/* Footer */}
       <div className="max-w-5xl mx-auto px-6">

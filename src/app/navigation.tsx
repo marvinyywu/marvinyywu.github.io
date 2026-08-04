@@ -25,7 +25,6 @@ const navItems = [
   { label: 'Skills', id: 'skills' },
   { label: 'Education', id: 'education' },
   { label: 'Certifications', id: 'certification' },
-  /*{ label: 'Contact', id: 'contact' },*/
 ]
 
 export function Navigation() {
@@ -34,20 +33,41 @@ export function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
+    let ticking = false
     const onScroll = () => {
-      setScrolled(window.scrollY > 20)
-      const navHeight = 80
-      const scrollPos = window.scrollY + navHeight + 50
-      let current = ''
-      for (const { id } of navItems) {
-        const el = document.getElementById(id)
-        if (el && el.offsetTop <= scrollPos) current = id
-      }
-      setActiveSection(current)
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 20)
+        ticking = false
+      })
     }
     window.addEventListener('scroll', onScroll, { passive: true })
     onScroll()
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const els = navItems
+      .map(({ id }) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null)
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting)
+        if (visible.length === 0) return
+        // Prefer the entry closest to the top of the observed band — it's the
+        // section that has been scrolled furthest into, not one just entering.
+        const topmost = visible.reduce((a, b) =>
+          a.boundingClientRect.top < b.boundingClientRect.top ? a : b
+        )
+        setActiveSection(topmost.target.id)
+      },
+      { rootMargin: '-130px 0px -70% 0px', threshold: 0 }
+    )
+
+    els.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
   }, [])
 
   const scrollTo = (id: string) => {

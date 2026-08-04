@@ -6,11 +6,11 @@ export function About() {
     <div className="flex flex-col md:flex-row gap-8 items-start">
       <div className="flex-1">
         <p>
-          I am a 4th year Computer Engineering student at the{" "}
+          I am a Computer Engineering New Graduate from the{" "}
           <Link href="https://www.utoronto.ca/" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
             University of Toronto
           </Link>
-          . I specialize in software engineering with additional experience in hardware systems, machine learning, and data analysis. I am most proficient with C, C++, and Python, and have developed projects using React, Flask, and Django frameworks. I am driven by a passion for producing high-quality software that demonstrates innovative and thoughtful design.
+          . I specialize in full-stack software engineering, with additional experience in applied machine learning, data analysis, and embedded systems. I am most proficient with Python, TypeScript, and Java, and have built production-style applications using React, Next.js, Spring Boot, ASP.NET Core, and LangChain. I am driven by a passion for producing high-quality software that demonstrates innovative and thoughtful design.
         </p>
         <p>
           I started my professional engineering career working under a 16 month internship at{" "}
@@ -20,7 +20,11 @@ export function About() {
           . There I gained valuable exposure to the nuclear industry, and further strengthened my communication and collaboration skills. I was able to apply the technical skills learned from academics into software applications that improved everyday departmental workflows and operational efficiency, making a real-world impact.
         </p>
         <p>
-          Currently I am seeking a full-time position in software engineering or related fields beginning of Summer 2026, where I can continually learn and apply my technical skills into practical applications and further develop my professional career.
+          I now work full-time as a software developer for{" "}
+          <Link href="https://www.redwood.com/" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
+            Redwood Software
+          </Link>
+          , where I can continually learn and apply my technical skills into practical automation orchestration software and further develop my professional career.
         </p>
       </div>
       <div className="relative shrink-0 mx-auto md:mx-0">

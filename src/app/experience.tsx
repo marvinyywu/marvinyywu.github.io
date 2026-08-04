@@ -15,11 +15,19 @@ interface ExperienceItem {
   role: string
   period: string
   location: string
-  bullets: string[]
+  bullets?: string[]
   tags?: string[]
 }
 
 const experiences: ExperienceItem[] = [
+  {
+    company: "Redwood Software",
+    logo: { src: "/redwood-logo.png", alt: "Redwood Software Logo" },
+    role: "Entry level Full Stack Developer",
+    period: "August 2026 - Present",
+    location: "Markham, Ontario",
+    tags: ["Java", "HTML", "CSS", "JavaScript", "TypeScript", "SQL", "React", "Spring Boot", "Docker", "Kubernetes", "AWS"],
+  },
   {
     company: "Ontario Power Generation",
     logo: { src: "/opg-logo.png", alt: "Ontario Power Generation Logo" },
@@ -74,13 +82,15 @@ export function Experience() {
                 </CardTitle>
                 <CardDescription className="text-base font-semibold text-foreground">{exp.role}</CardDescription>
               </CardHeader>
-              <CardContent>
-                <ul className="list-description">
-                  {exp.bullets.map((bullet, i) => (
-                    <li key={i}>{bullet}</li>
-                  ))}
-                </ul>
-              </CardContent>
+              {exp.bullets && exp.bullets.length > 0 && (
+                <CardContent>
+                  <ul className="list-description">
+                    {exp.bullets.map((bullet, i) => (
+                      <li key={i}>{bullet}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              )}
               <CardFooter>
                 <div className="space-y-2 w-full">
                   <p className="mt-0 text-sm text-muted-foreground">{exp.period} | {exp.location}</p>
